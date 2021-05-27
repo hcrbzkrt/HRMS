@@ -6,5 +6,9 @@ public class SuccessResult extends Result {
 		super(true);
 	}
 	
+	public SuccessResult(String message) {
+		super(true, message);
+	}
+	
 	
 }

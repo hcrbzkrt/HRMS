@@ -28,8 +28,7 @@ public class JobTitleManager implements JobTitleService {
 	
 	@Override
 	public DataResult<List<JobTitle>> getAll() {
-		return new SuccessDataResult<List<JobTitle>>
-		(this.jobTitleDao.findAll());
+		return new SuccessDataResult<List<JobTitle>>(this.jobTitleDao.findAll());
 	}
 	
 	@Override
