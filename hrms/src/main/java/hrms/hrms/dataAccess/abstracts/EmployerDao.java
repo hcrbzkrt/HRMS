@@ -1,4 +1,4 @@
-package hrms.hrms.business.abstracts;
+package hrms.hrms.dataAccess.abstracts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
