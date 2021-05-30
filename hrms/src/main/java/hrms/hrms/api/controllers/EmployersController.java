@@ -32,9 +32,9 @@ public class EmployersController {
 		return this.employerService.getAll();
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/register")
 	public Result add(@RequestBody Employer employer) {
-		return this.employerService.add(employer);
+		return this.employerService.register(employer);
 	}
 	
 }

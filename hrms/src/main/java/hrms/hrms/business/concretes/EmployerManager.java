@@ -18,6 +18,7 @@ public class EmployerManager implements EmployerService {
 
 	private EmployerDao employerDao;
 	
+	
 	@Autowired
 	public EmployerManager(EmployerDao employerDao) {
 		super();
@@ -30,8 +31,9 @@ public class EmployerManager implements EmployerService {
 	}
 	
 	@Override
-	public Result add(Employer employer) {
+	public Result register(Employer employer) {
 		this.employerDao.save(employer);
 		return new SuccessResult();
-	}
+		}
+
 }

@@ -1,5 +1,6 @@
 package hrms.hrms.core.utilities.results;
 
+
 public class SuccessDataResult<H> extends DataResult<H> {
 
 	public SuccessDataResult(H data, String message) {
