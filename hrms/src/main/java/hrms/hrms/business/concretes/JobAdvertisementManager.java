@@ -1,10 +1,10 @@
 package hrms.hrms.business.concretes;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import hrms.hrms.business.abstracts.JobAdvertisementService;
@@ -14,6 +14,7 @@ import hrms.hrms.core.utilities.results.SuccessDataResult;
 import hrms.hrms.core.utilities.results.SuccessResult;
 import hrms.hrms.dataAccess.abstracts.JobAdvertisementDao;
 import hrms.hrms.entities.concretes.JobAdvertisement;
+
 
 @Service
 public class JobAdvertisementManager implements JobAdvertisementService {
@@ -27,38 +28,31 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 	}
 
 	@Override
-	public List<JobAdvertisement> getAll() {
-		return this.jobAdvertisementDao.findAll();
+	public DataResult<List<JobAdvertisement>> getAll() {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Data Listelendi.");
 	}
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getAllSorted() {
-		Sort sort = Sort.by(Direction.ASC, "applicationDeadline");
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort),"İş ilanları listelendi!");
+		Sort sort = Sort.by(Sort.Direction.DESC,"jobAdvertisementName");
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort),"Başarılı.");
 	}
 
 	@Override
-	public DataResult<List<JobAdvertisement>> getByEmployer_userId(int userId) {
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByEmployer_userId(userId),
-				"Firmanın İş İlanları Listelendi.");
+	public DataResult<JobAdvertisement> getByJobAdvertisementName(String jobAdvertisementName) {
+		return new SuccessDataResult<JobAdvertisement>(this.jobAdvertisementDao.getByJobAdvertisementName(jobAdvertisementName),"Data listelendi");
 	}
 
 	@Override
-	public DataResult<List<JobAdvertisement>> getByAdvertisementStatus(boolean status) {
-		String message = "Aktif ";
-		if (status == false) {
-			message = "Pasif ";
-		}
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByAdvertisementStatus(status) , message + " iş İlanları Listelendi.");
+	public DataResult<List<JobAdvertisement>> getByJobAdvertisementNameContains(String JobAdvertisement) {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByJobAdverttisementNameContains(JobAdvertisement),"Data listelendi");
 	}
-
 
 	@Override
-	public Result updateJobAdvertisementSetJobAdvertisementStatusForEmployer_userId(int jobAdvertisementId,int employerId) {
-		this.jobAdvertisementDao.updateJobAdvertisementSetJobAdvertisementStatusForEmployer_userId(jobAdvertisementId, employerId);
-		return new SuccessResult("İlan Kapatıldı!");
+	public Result add(JobAdvertisement jobAdvertisement) {
+		this.jobAdvertisementDao.save(jobAdvertisement);
+		return new SuccessResult("eklendi.");
 	}
 
-	
 	
 }

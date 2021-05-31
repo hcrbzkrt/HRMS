@@ -2,20 +2,20 @@ package hrms.hrms.business.abstracts;
 
 import java.util.List;
 
-
 import hrms.hrms.core.utilities.results.DataResult;
 import hrms.hrms.core.utilities.results.Result;
 import hrms.hrms.entities.concretes.JobAdvertisement;
 
 public interface JobAdvertisementService {
+	
+	Result add(JobAdvertisement jobAdvertisement);
 
-	public List<JobAdvertisement> getAll();
+	DataResult<List<JobAdvertisement>> getAll();
 	
-	public DataResult<List<JobAdvertisement>> getAllSorted();
+	DataResult<List<JobAdvertisement>> getAllSorted();
 	
-	public DataResult<List<JobAdvertisement>> getByEmployer_userId(int userId);
-	
-	public DataResult<List<JobAdvertisement>> getByAdvertisementStatus(boolean status);
-	
-	public Result updateJobAdvertisementSetJobAdvertisementStatusForEmployer_userId(int jobAdvertisementId, int employerId);
+	DataResult<JobAdvertisement> getByJobAdvertisementName(String jobAdvertisementName);
+	  
+    DataResult<List<JobAdvertisement>> getByJobAdvertisementNameContains(String JobAdvertisement);
+	 
 }

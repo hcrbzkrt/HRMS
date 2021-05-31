@@ -12,9 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "job_advertisements")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "JobAdvertisement"}) 
 @NoArgsConstructor
 @AllArgsConstructor
 public class JobAdvertisement {
@@ -44,10 +41,6 @@ public class JobAdvertisement {
 	@ManyToOne()
 	@JoinColumn(name = "city_id")
 	private City city;
-	
-	@Column(name="description",length = 2500)
-	@Type(type="text")
-	private String description;
 	
 	@Column(name="min_salary")
 	private int minSalary;
