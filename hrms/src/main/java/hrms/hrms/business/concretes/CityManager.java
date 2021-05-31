@@ -27,5 +27,7 @@ public class CityManager implements CityService {
 		return new SuccessDataResult<List<City>>(this.cityDao.findAll());
 	}
 
+	
+
 
 }

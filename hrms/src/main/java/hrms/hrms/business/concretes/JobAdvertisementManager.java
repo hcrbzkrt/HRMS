@@ -34,20 +34,12 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getAllSorted() {
-		Sort sort = Sort.by(Sort.Direction.DESC,"jobAdvertisementName");
+		Sort sort = Sort.by(Sort.Direction.DESC);
 		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort),"Başarılı.");
 	}
 
-	@Override
-	public DataResult<JobAdvertisement> getByJobAdvertisementName(String jobAdvertisementName) {
-		return new SuccessDataResult<JobAdvertisement>(this.jobAdvertisementDao.getByJobAdvertisementName(jobAdvertisementName),"Data listelendi");
-	}
 
-	@Override
-	public DataResult<List<JobAdvertisement>> getByJobAdvertisementNameContains(String JobAdvertisement) {
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByJobAdverttisementNameContains(JobAdvertisement),"Data listelendi");
-	}
-
+	
 	@Override
 	public Result add(JobAdvertisement jobAdvertisement) {
 		this.jobAdvertisementDao.save(jobAdvertisement);

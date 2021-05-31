@@ -57,8 +57,8 @@ public class JobAdvertisement {
 	@Column(name="created_date")
 	private LocalDateTime createdDate;
 	
-	@Column(name="is_active")
-	private boolean isAcvtive = true;
+	@Column(name="is_activated")
+	private boolean isActivated;
 	
 	
 	

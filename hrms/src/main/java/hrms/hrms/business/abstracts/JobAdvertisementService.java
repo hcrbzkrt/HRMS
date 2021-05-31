@@ -14,8 +14,5 @@ public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getAllSorted();
 	
-	DataResult<JobAdvertisement> getByJobAdvertisementName(String jobAdvertisementName);
-	  
-    DataResult<List<JobAdvertisement>> getByJobAdvertisementNameContains(String JobAdvertisement);
-	 
+	
 }
