@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import hrms.hrms.business.abstracts.JobAdvertisementService;
 import hrms.hrms.core.utilities.results.DataResult;
 import hrms.hrms.core.utilities.results.Result;
@@ -35,11 +36,13 @@ public class JobAdvertisementsController {
     	return this.jobAdvertisementService.getAll();
     }
  
-	@GetMapping("/getAllActivatedSorted")
+	@GetMapping("/getAllSorted")
 	public DataResult<List<JobAdvertisement>> getAllSorted() {
 		return this.jobAdvertisementService.getAllSorted();
 	}
 	
-	
-
+	@GetMapping("/getByActivityStatus")
+	public DataResult<List<JobAdvertisement>> getByActivityStatus(){
+	     return this.jobAdvertisementService.getByActivitySutatus();
+	}
 }

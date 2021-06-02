@@ -14,5 +14,5 @@ public interface JobAdvertisementService {
 	
 	DataResult<List<JobAdvertisement>> getAllSorted();
 	
-	
+	DataResult<List<JobAdvertisement>> getByActivitySutatus();	
 }

@@ -46,5 +46,10 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 		return new SuccessResult("eklendi.");
 	}
 
+	@Override
+	public DataResult<List<JobAdvertisement>> getByActivitySutatus() {
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Listelendi.");
+	}
+
 	
 }
