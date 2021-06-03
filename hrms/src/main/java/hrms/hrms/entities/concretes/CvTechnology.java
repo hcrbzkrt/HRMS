@@ -29,4 +29,8 @@ public class CvTechnology {
 	@ManyToOne
 	@JoinColumn(name = "technology_id")
 	private Technology technology;
+	
+	@ManyToOne
+    @JoinColumn(name = "cv_id")
+    private Cv cv;
 }

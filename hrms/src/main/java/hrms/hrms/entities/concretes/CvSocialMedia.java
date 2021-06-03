@@ -32,5 +32,8 @@ public class CvSocialMedia {
 	@JoinColumn(name = "social_media_id")
 	private SocialMedia socialMedia;
 
+	@ManyToOne
+	@JoinColumn(name = "cv_id", referencedColumnName = "cv_id")
+	private Cv cv;
 
 }

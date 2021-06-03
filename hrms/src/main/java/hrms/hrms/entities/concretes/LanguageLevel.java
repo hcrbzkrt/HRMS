@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "language_levels")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cvForeignLanguage"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cvForeignLanguages"})
 public class LanguageLevel {
 
 	@Id
@@ -36,5 +36,5 @@ public class LanguageLevel {
 	private int languageLevel;
 	
 	@OneToMany(mappedBy = "languageLevel")
-	private List<CvForeignLanguage> cvForeignLanguage;
+	private List<CvForeignLanguage> cvForeignLanguages;
 }
