@@ -18,23 +18,23 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "languge_levels")
+@Table(name = "language_levels")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cvForeignLaguages"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "cvForeignLanguage"})
 public class LanguageLevel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "languge_level_id")
+	@Column(name = "language_level_id")
 	private int langugeLevelId;
 	
-	@Column(name = "languge_level_name")
+	@Column(name = "language_level_name")
 	private String languageLevelName;
 	
-	@Column(name = "languge_level")
-	private int langugeLevel;
+	@Column(name = "language_level")
+	private int languageLevel;
 	
-	@OneToMany(mappedBy = "langugeLevel")
-	private List<CvForeignLanguage> cvForeignLanguages;
+	@OneToMany(mappedBy = "languageLevel")
+	private List<CvForeignLanguage> cvForeignLanguage;
 }

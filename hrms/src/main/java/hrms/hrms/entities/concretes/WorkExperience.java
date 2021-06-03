@@ -1,6 +1,5 @@
 package hrms.hrms.entities.concretes;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,10 +30,10 @@ public class WorkExperience {
 	private String workplaceName;
 	
 	@Column(name = "starting_date")
-	private Date  startingDate;
+	private String  startingDate;
 	
 	@Column(name = "ending_date")
-	private Date endingDate;
+	private String endingDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "cv_id", referencedColumnName = "cv_id")

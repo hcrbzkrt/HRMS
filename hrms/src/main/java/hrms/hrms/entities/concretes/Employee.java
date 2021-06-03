@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "employer")
-@AllArgsConstructor
+@Table(name= "employees")
 @NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
 
 	@Id
@@ -22,17 +22,10 @@ public class Employee {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "company_name")
-	private String companyName;
+	@Column(name = "first_name")
+	private String firstName;
 	
-	@Column(name = "website")
-	private String website;
+	@Column(name = "lastName")
+	private String lastName;
 	
-	@Column(name = "phone_number")
-	private int phoneNumber;
-	
-	
-		
-	}
-	
-
+}
