@@ -10,6 +10,9 @@ public interface UniversityService {
 
 
 	DataResult<List<University>> getAll();
+	
 	Result add(University university);
+	
+	DataResult<List<University>> getByUniversityNameContains(String universityName);
 
 }

@@ -35,4 +35,9 @@ public class EmployeesController {
 	public Result register(@RequestBody Employee employee) {
 		return this.employeeService.register(employee);
 	}
+	
+	@PostMapping("/update")
+	public Result update(@RequestBody Employee employee) {
+		return this.employeeService.update(employee);
+	}
 }

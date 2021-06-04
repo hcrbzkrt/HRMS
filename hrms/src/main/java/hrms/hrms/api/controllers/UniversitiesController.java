@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import hrms.hrms.business.abstracts.UniversityService;
@@ -37,4 +38,10 @@ public class UniversitiesController {
 	public Result add(@RequestBody University university) {
 		return this.universityService.add(university);
 	}
+	
+	@GetMapping("/getByUniversityNameContains")
+	public DataResult<List<University>> getByUniversityNameContains(@RequestParam String universityName){
+		return this.universityService.getByUniversityNameContains(universityName);
+	}
+	
 }

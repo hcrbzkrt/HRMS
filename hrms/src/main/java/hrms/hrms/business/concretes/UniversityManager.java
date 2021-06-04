@@ -35,6 +35,13 @@ public class UniversityManager implements UniversityService{
 		return new SuccessResult();
 	}
 
+	@Override
+	public DataResult<List<University>> getByUniversityNameContains(String universityName) {
+		return new SuccessDataResult<List<University>>(this.universityDao.getByUniversityNameContains(universityName),"listelendi");
+	}
+
+
 	
 
+	
 }

@@ -9,6 +9,7 @@ import hrms.hrms.entities.concretes.CvForeignLanguage;
 public interface CvForeignLanguageService {
 
 	DataResult<List<CvForeignLanguage>> getAll();
+	
 	Result add(CvForeignLanguage cvForeignLanguage);
 
 }

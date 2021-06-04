@@ -6,4 +6,5 @@ import hrms.hrms.entities.concretes.LanguageLevel;
 
 public interface LanguageLevelDao extends JpaRepository<LanguageLevel, Integer>{
 
+	
 }

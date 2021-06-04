@@ -9,5 +9,5 @@ public interface CityService {
 
 	DataResult<List<City>> getAll();
 
-	
+	DataResult<List<City>> getByCityNameContains(String cityName);
 }

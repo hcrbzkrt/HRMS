@@ -27,6 +27,11 @@ public class CityManager implements CityService {
 		return new SuccessDataResult<List<City>>(this.cityDao.findAll());
 	}
 
+	@Override
+	public DataResult<List<City>> getByCityNameContains(String cityName) {
+		return new SuccessDataResult<List<City>>(this.cityDao.getByCityNameContains(cityName));
+	}
+
 	
 
 

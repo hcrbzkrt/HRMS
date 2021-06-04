@@ -9,5 +9,7 @@ import hrms.hrms.entities.concretes.Employer;
 public interface EmployerService {
 
 	DataResult<List<Employer>> getAll();
+	
 	Result register(Employer employer);
+	
 }

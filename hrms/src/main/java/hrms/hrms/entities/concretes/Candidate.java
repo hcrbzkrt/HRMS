@@ -23,8 +23,8 @@ public class Candidate {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "id")
-	private int id;
+	@Column(name = "candidate_id")
+	private int candidateId;
 	
 	@Column(name = "first_name")
 	private String firstName;

@@ -36,4 +36,10 @@ public class EmployeeManager implements EmployeeService {
 		return new SuccessResult();
 		}
 
+	@Override
+	public Result update(Employee employee) {
+		this.employeeDao.save(employee);
+		return new SuccessResult("Çalışanlar güncellendi.");
+	}
+
 }

@@ -37,4 +37,5 @@ public class CvForeignLanguagesController {
 	public Result add(@RequestBody CvForeignLanguage cvForeignLanguage) {
 		return this.cvForeignLanguageService.add(cvForeignLanguage);
 	}
+	
 }
