@@ -26,7 +26,7 @@ public class CvManager implements CvService{
 
 	@Override
 	public DataResult<List<Cv>> getAll() {
-		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll());
+		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(),"cv eklendi");
 	}
 
 	@Override

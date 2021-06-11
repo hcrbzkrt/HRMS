@@ -26,6 +26,9 @@ public class Candidate {
 	@Column(name = "candidate_id")
 	private int candidateId;
 	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name = "first_name")
 	private String firstName;
 	

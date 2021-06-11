@@ -9,6 +9,6 @@ import hrms.hrms.entities.concretes.Cv;
 public interface CvService {
 
 	DataResult<List<Cv>> getAll();
-	Result add(Cv cv);
 
+	Result add(Cv cv);
 }

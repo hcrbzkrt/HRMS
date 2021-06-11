@@ -22,6 +22,9 @@ public class Employer {
 	@Column(name = "id")
 	private int id;
 	
+	@Column(name = "email")
+	private String email;
+	
 	@Column(name = "company_name")
 	private String companyName;
 	

@@ -26,7 +26,7 @@ public class CvSocialMediaManager implements CvSocialMediaService{
 
 	@Override
 	public DataResult<List<CvSocialMedia>> getAll() {
-		return new SuccessDataResult<List<CvSocialMedia>>(this.cvSocialMediaDao.findAll());
+		return new SuccessDataResult<List<CvSocialMedia>>(this.cvSocialMediaDao.findAll(),"eklendi.");
 	}
 
 	@Override
