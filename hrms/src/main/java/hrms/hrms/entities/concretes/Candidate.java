@@ -41,4 +41,6 @@ public class Candidate {
 	@Column(name = "birth_date")
 	private Date birthDate;
 	
+	
+	
 }

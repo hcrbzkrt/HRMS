@@ -13,4 +13,6 @@ public interface EmployeeService {
 	Result register(Employee employee);
 	
 	Result update(Employee employee);
+
+	
 }

@@ -1,5 +1,6 @@
 package hrms.hrms.entities.concretes;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -31,6 +32,12 @@ public class University {
 	
 	@Column(name = "university_name")
 	private String universityName;
+	
+	@Column(name = "start_date")
+	private Date startDate;
+	
+	@Column(name = "end_date")
+	private Date endDate;
 	
 	@OneToMany(mappedBy = "university")
     private List<EducationInformation> educationInformations;

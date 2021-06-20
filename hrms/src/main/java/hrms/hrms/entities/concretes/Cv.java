@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -36,23 +35,19 @@ public class Cv {
 	@Column(name = "photo_link")
 	private String photoLink;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	private List<CvForeignLanguage> cvForeignLanguage;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "cv")
 	private List<CvSocialMedia> cvSocialMedia;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	private List<CvTechnology> cvTechnology;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	private List<EducationInformation> educationInformation;
  
-	@JsonIgnore
 	@OneToMany(mappedBy = "cv")
 	private List<WorkExperience> workExperience;
 

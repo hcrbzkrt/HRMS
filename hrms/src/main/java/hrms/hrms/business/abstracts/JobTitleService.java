@@ -9,7 +9,10 @@ import hrms.hrms.entities.concretes.JobTitle;
 public interface JobTitleService {
 
 	DataResult<List<JobTitle>> getAll();
+	
 	Result add(JobTitle jobTitle);
 
+	Result delete(JobTitle jobTitle);
 	
+	Result update(JobTitle jobTitle);
 }
