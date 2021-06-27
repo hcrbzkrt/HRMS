@@ -32,12 +32,12 @@ public class UniversityManager implements UniversityService{
 	@Override
 	public Result add(University university) {
 		this.universityDao.save(university);
-		return new SuccessResult();
+		return new SuccessResult("University added.");
 	}
 
 	@Override
 	public DataResult<List<University>> getByUniversityNameContains(String universityName) {
-		return new SuccessDataResult<List<University>>(this.universityDao.getByUniversityNameContains(universityName),"listelendi");
+		return new SuccessDataResult<List<University>>(this.universityDao.getByUniversityNameContains(universityName),"Listed.");
 	}
 
 

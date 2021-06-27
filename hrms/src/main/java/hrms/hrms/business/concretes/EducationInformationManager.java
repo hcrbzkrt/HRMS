@@ -26,13 +26,13 @@ public class EducationInformationManager implements EducationInformationService{
 
 	@Override
 	public DataResult<List<EducationInformation>> getAll() {
-		return new SuccessDataResult<List<EducationInformation>>(this.educationInformtionDao.findAll(),"Eğitim bilgileri eklendi.");
+		return new SuccessDataResult<List<EducationInformation>>(this.educationInformtionDao.findAll(),"Listed.");
 	}
 
 	@Override
 	public Result add(EducationInformation educationInformation) {
 		this.educationInformtionDao.save(educationInformation);
-		return new SuccessResult();
+		return new SuccessResult("Education Information added.");
 	}
 
 }

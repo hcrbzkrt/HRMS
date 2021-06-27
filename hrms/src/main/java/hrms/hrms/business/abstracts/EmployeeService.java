@@ -10,9 +10,11 @@ public interface EmployeeService {
 
 	DataResult<List<Employee>> getAll();
 	
-	Result register(Employee employee);
-	
 	Result update(Employee employee);
+
+	Result add(Employee employee);
+
+	Result delete(Employee employee);
 
 	
 }

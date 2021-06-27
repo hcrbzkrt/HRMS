@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,7 +22,6 @@ public class ImageManager implements ImageService{
 
 	private ImageDao imageDao;
 	private PhotoService photoService;
-	private ModelMapper modelMapper;
 
 	@Autowired
 	public ImageManager(ImageDao imageDao, PhotoService photoService) {
@@ -41,7 +39,7 @@ public class ImageManager implements ImageService{
 	@Override
 	public Result addAll(List<Image> Image) {
 		imageDao.saveAll(Image);
-		return new SuccessResult();
+		return new SuccessResult("Image get all.");
 	}
 
 	@Override
@@ -61,17 +59,17 @@ public class ImageManager implements ImageService{
 
 	@Override
 	public DataResult<Image> getById(int imageId) {
-		return new SuccessDataResult<Image>(this.imageDao.getOne(imageId));
+		return new SuccessDataResult<Image>(this.imageDao.getOne(imageId),"Success");
 	}
 
 	@Override
 	public DataResult<List<Image>> getAll() {
-		return new SuccessDataResult<>(this.imageDao.findAll(),".");
+		return new SuccessDataResult<>(this.imageDao.findAll(),"Listed");
 	}
 
 	@Override
 	public DataResult<List<Image>> getAllByCandidateId(int candidateId) {
-		return new SuccessDataResult<>(this.imageDao.getAllByImageId(candidateId));
+		return new SuccessDataResult<>(this.imageDao.getAllByImageId(candidateId),"Success");
 	}
 
 

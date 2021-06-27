@@ -26,13 +26,13 @@ public class CvTechnologyManager implements CvTechnologyService{
 
 	@Override
 	public DataResult<List<CvTechnology>> getAll() {
-		return new SuccessDataResult<List<CvTechnology>>();
+		return new SuccessDataResult<List<CvTechnology>>("Listed.");
 	}
 
 	@Override
 	public Result add(CvTechnology cvTechnology) {
 		this.cvTechnologyDao.save(cvTechnology);
-		return new SuccessResult();
+		return new SuccessResult("CV Technology added.");
 	}
 
 }

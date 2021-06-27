@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import hrms.hrms.business.abstracts.CityService;
 import hrms.hrms.core.utilities.results.DataResult;
+import hrms.hrms.core.utilities.results.Result;
 import hrms.hrms.core.utilities.results.SuccessDataResult;
+import hrms.hrms.core.utilities.results.SuccessResult;
 import hrms.hrms.dataAccess.abstracts.CityDao;
 import hrms.hrms.entities.concretes.City;
 
@@ -24,15 +26,30 @@ public class CityManager implements CityService {
 	
 	@Override
 	public DataResult<List<City>> getAll() {
-		return new SuccessDataResult<List<City>>(this.cityDao.findAll());
+		return new SuccessDataResult<List<City>>(this.cityDao.findAll(),"Listed.");
 	}
 
 	@Override
 	public DataResult<List<City>> getByCityNameContains(String cityName) {
-		return new SuccessDataResult<List<City>>(this.cityDao.getByCityNameContains(cityName));
+		return new SuccessDataResult<List<City>>(this.cityDao.getByCityNameContains(cityName),"Succes");
 	}
 
-	
+	@Override
+	public Result delete(City city) {
+		this.cityDao.save(city);
+		return new SuccessResult("City deleted.");
+	}
 
+	@Override
+	public Result update(City city) {
+		this.cityDao.save(city);
+		return new SuccessResult("City updated.");
+	}
+
+	@Override
+	public Result add(City city) {
+		this.cityDao.save(city);
+		return new SuccessResult("City added.");
+	}
 
 }

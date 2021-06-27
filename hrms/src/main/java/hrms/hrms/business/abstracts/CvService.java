@@ -11,4 +11,8 @@ public interface CvService {
 	DataResult<List<Cv>> getAll();
 
 	Result add(Cv cv);
+
+	Result update(Cv cv);
+
+	Result delete(Cv cv);
 }

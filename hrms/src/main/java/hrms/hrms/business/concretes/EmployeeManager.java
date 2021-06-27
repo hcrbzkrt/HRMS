@@ -27,19 +27,25 @@ public class EmployeeManager implements EmployeeService {
 	
 	@Override
 	public DataResult<List<Employee>> getAll() {
-		return new SuccessDataResult<List<Employee>>(this.employeeDao.findAll());
+		return new SuccessDataResult<List<Employee>>(this.employeeDao.findAll(),"listed.");
 	}
 	
 	@Override
-	public Result register(Employee employee) {
-		this.employeeDao.save(employee);
-		return new SuccessResult();
-		}
-
-	@Override
 	public Result update(Employee employee) {
 		this.employeeDao.save(employee);
-		return new SuccessResult("Çalışanlar güncellendi.");
+		return new SuccessResult("Employees updated.");
+	}
+
+	@Override
+	public Result add(Employee employee) {
+		this.employeeDao.save(employee);
+		return new SuccessResult("Employees added.");
+	}
+
+	@Override
+	public Result delete(Employee employee) {
+		this.employeeDao.save(employee);
+		return new SuccessResult("Employees deleted.");
 	}
 
 	

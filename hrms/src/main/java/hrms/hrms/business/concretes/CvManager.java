@@ -26,13 +26,25 @@ public class CvManager implements CvService{
 
 	@Override
 	public DataResult<List<Cv>> getAll() {
-		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(),"cv eklendi");
+		return new SuccessDataResult<List<Cv>>(this.cvDao.findAll(),"Listed.");
 	}
 
 	@Override
 	public Result add(Cv cv) {
 		this.cvDao.save(cv);
-		return new SuccessResult();
+		return new SuccessResult("CV added.");
+	}
+
+	@Override
+	public Result update(Cv cv) {
+		this.cvDao.save(cv);
+		return new SuccessResult("CV updated.");
+	}
+
+	@Override
+	public Result delete(Cv cv) {
+		this.cvDao.save(cv);
+		return new SuccessResult("CV deleted.");
 	}
 
 }

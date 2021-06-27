@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,14 +35,18 @@ public class EmployeesController {
 		return this.employeeService.getAll();
 	}
 	
-	@PostMapping("/register")
-	public Result register(@RequestBody Employee employee) {
-		return this.employeeService.register(employee);
-	}
-	
-	@PostMapping("/update")
+	@PutMapping("/update")
 	public Result update(@RequestBody Employee employee) {
 		return this.employeeService.update(employee);
 	}
 	
+	@PostMapping("/add")
+	public Result add(@RequestBody Employee employee){
+		return this.employeeService.add(employee);
+	}
+	
+	@DeleteMapping("/delete")
+    public Result delete(@RequestBody Employee employee){
+		return this.employeeService.delete(employee);
+	}
 }

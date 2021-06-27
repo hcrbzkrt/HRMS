@@ -27,13 +27,25 @@ public class EmployerManager implements EmployerService {
 	
 	@Override
 	public DataResult<List<Employer>> getAll() {
-		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll());
+		return new SuccessDataResult<List<Employer>>(this.employerDao.findAll(),"Listed.");
+	}
+
+	@Override
+	public Result add(Employer employer) {
+		this.employerDao.save(employer);
+		return new SuccessResult("Employer added.");
+	}
+
+	@Override
+	public Result update(Employer employer) {
+		this.employerDao.save(employer);
+		return new SuccessResult("Employer updated.");
+	}
+
+	@Override
+	public Result delete(Employer employer) {
+		this.employerDao.save(employer);
+		return new SuccessResult("Employer deleted.");
 	}
 	
-	@Override
-	public Result register(Employer employer) {
-		this.employerDao.save(employer);
-		return new SuccessResult();
-		}
-
 }

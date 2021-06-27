@@ -29,13 +29,13 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getAll() {
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Data Listelendi.");
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Listed.");
 	}
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getAllSorted() {
 		Sort sort = Sort.by(Sort.Direction.DESC);
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort),"Başarılı.");
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort),"Success.");
 	}
 
 
@@ -43,12 +43,12 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 	@Override
 	public Result add(JobAdvertisement jobAdvertisement) {
 		this.jobAdvertisementDao.save(jobAdvertisement);
-		return new SuccessResult("eklendi.");
+		return new SuccessResult("Job Advertisement added.");
 	}
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getByActivitySutatus() {
-		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Listelendi.");
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(),"Listed.");
 	}
 
 	

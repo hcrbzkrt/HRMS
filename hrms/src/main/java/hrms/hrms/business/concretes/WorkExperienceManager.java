@@ -26,13 +26,13 @@ public class WorkExperienceManager implements WorkExperienceService{
 
 	@Override
 	public DataResult<List<WorkExperience>> getAll() {
-		return new SuccessDataResult<List<WorkExperience>>(this.workExperienceDao.findAll());
+		return new SuccessDataResult<List<WorkExperience>>(this.workExperienceDao.findAll(),"Listed.");
 	}
 
 	@Override
 	public Result add(WorkExperience workExperience) {
 		this.workExperienceDao.save(workExperience);
-		return new SuccessResult();
+		return new SuccessResult("Work experience added.");
 		
 	}
 
